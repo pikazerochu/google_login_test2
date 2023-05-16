@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<script src="https://accounts.google.com/gsi/client" async defer></script> 
+<script>
+	// 登入之後
+	function onSignIn1(response) {
+        console.log('aa')
+		var credential = response.credential,
+			profile = JSON.parse(decodeURIComponent(escape(window.atob(credential.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))))), // 對 JWT 進行解碼
+			target = document.getElementById("GOOGLE_STATUS_1"),
+			html = "";
+
+		html += "ID: " + profile.sub + "<br/>";
+		html += "暱稱： " + profile.name + "<br/>";
+		//html += "會員頭像：" + profile.picture + "<br/>";
+		html += "頭像：" + "<img src=\""+profile.picture+"\"></img>" + "<br/>";
+		html += "email：" + profile.email + "<br/>";
+		target.innerHTML = html;
+	}
+</script> 
+
+<html>
+<head>
+    <meta charset='utf-8' name='viewport'><meta>
+	<title>A+ google登入測試</title>
+	<!-- <script src="https://accounts.google.com/gsi/client" async defer></script> --> 
+	<!-- <script>
+		function onSignIn(googleUser){
+			var id_token = googleUser.getAuthResponse().id_token;
+			var profile = googleUser.getBasicProfile();
+		};
+	</script>
+	<script>
+		function onLoad(){
+			gapi.client.init({
+			'clientId': '312106195936-a5tu9knplhtnlpjos2ifnbovj7g64bug.apps.googleusercontent.com',
+			'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+			'scope': 'https://www.googleapis.com/auth/calendar'
+			});
+		}
+	</script> -->
+</head>
+<!-- <body onload="onLoad()"> -->
+<body>
+	<!--<a href="index_real.html">另一個頁面</a>-->
+	<span id="GOOGLE_STATUS_1">
+    <div id="g_id_onload" data-client_id="312106195936-a5tu9knplhtnlpjos2ifnbovj7g64bug.apps.googleusercontent.com" data-callback="onSignIn1"></div>
+    <div class="g_id_signin" data-type="standard"></div>
+    <!-- <h1>Google Sign-In Example</h1>
+	<div class="g_id_signin" data-onsuccess="onSignIn"></div> -->
+	
+    <!--目前狀態：-->
+    
+    </span>
+</body>
+</html>
