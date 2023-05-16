@@ -8,7 +8,8 @@
 			profile = JSON.parse(decodeURIComponent(escape(window.atob(credential.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))))), // 對 JWT 進行解碼
 			target = document.getElementById("GOOGLE_STATUS_1"),
 			html = "";
-
+		gmail_to_lineaccount = {'pikazerochu@gmail.com':"4ce45e0644e39b7c3ebbbaab238c3b39",'iphlex@gmail.com':"c7e69bcbe777d5b81b4cdcab69433f4d"}
+		
 		html += "ID: " + profile.sub + "<br/>";
 		html += "email：" + profile.email + "<br/>";
 		html += "暱稱： " + profile.name + "<br/>";
