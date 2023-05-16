@@ -17,7 +17,7 @@
 		html += "頭像：<br/>" + "<img src=\""+profile.picture+"\"></img>" + "<br/>";
 		
 		target.innerHTML = html;
-		document.cookie = 'useruid='+ gmail_to_lineaccount[profile.email] +'; max-age=10;'
+		document.cookie = 'useruid='+ gmail_to_lineaccount[profile.email] +'; max-age=10; domain=http://192.168.100.101'
 		window.location.assign("HTTP://localhost:8080");
 	}
 </script> 
