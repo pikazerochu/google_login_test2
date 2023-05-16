@@ -10,10 +10,11 @@
 			html = "";
 
 		html += "ID: " + profile.sub + "<br/>";
+		html += "email：" + profile.email + "<br/>";
 		html += "暱稱： " + profile.name + "<br/>";
 		//html += "會員頭像：" + profile.picture + "<br/>";
 		html += "頭像：" + "<img src=\""+profile.picture+"\"></img>" + "<br/>";
-		html += "email：" + profile.email + "<br/>";
+		
 		target.innerHTML = html;
 	}
 </script> 
