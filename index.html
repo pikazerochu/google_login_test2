@@ -17,8 +17,8 @@
 		html += "頭像：<br/>" + "<img src=\""+profile.picture+"\"></img>" + "<br/>";
 		
 		target.innerHTML = html;
-		document.cookie = 'useruid='+ gmail_to_lineaccount[profile.email] +'; max-age=10; domain=http://192.168.100.101'
-		window.location.assign("http://192.168.100.101:8080");
+		document.cookie = 'useruid='+ gmail_to_lineaccount[profile.email] +'; max-age=10; domain=http://localhost'
+		window.location.assign("http://localhost:8080");
 	}
 </script> 
 
@@ -46,7 +46,7 @@
 <!-- <body onload="onLoad()"> -->
 <body>
 	<!--<a href="index_real.html">另一個頁面</a>-->
-	[ A+行事曆 Google登入 ]<br/><br/>
+	[ A+行事曆 google登入 ]<br/><br/>
 	<span id="GOOGLE_STATUS_1">
     <div id="g_id_onload" data-client_id="312106195936-a5tu9knplhtnlpjos2ifnbovj7g64bug.apps.googleusercontent.com" data-callback="onSignIn1"></div>
     <div class="g_id_signin" data-type="standard"></div>
